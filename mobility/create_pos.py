@@ -193,7 +193,7 @@ def generate_random_3Dgraph(n_nodes, radius, seed=None):
 
     #write to file
     original_stdout = sys.stdout
-    with open('postionstart.txt','w') as fp:
+    with open('./files/postionstart.txt','w') as fp:
         sys.stdout = fp
         for line in generate_adjlist_with_all_edges(globalvars.G,' '):
             print(line)
