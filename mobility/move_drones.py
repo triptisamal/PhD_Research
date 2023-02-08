@@ -47,8 +47,15 @@ def main():
     globalvars.move = int(sys.argv[1])
 
     create_drones_network(0)
-    generate_final_position()
-    display_final_position()
+
+    #this is the time at which the simulator notes how much each drone has moved
+    time_blocks = [] #seconds
+    for t in range(10):
+        time_blocks[t] = t+5 #TODO change 5 according to what measurement you got in petal algo; it is the time in which appreciable amount of movement happens for a drone
+
+    for time in time_blocks:
+        generate_final_position()
+        display_final_position()
 
 
 
