@@ -1,0 +1,43 @@
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+Angle between sd_vector and xy plane= -24.094632092960996
+s= [3, 4, 5] _s= [3, 2, 6]
+d= [5, 5, 4] _d= [5, 3, 6]
+sd_rotated (in plane xy)= [2, 1, 0]
+Angle between rotated vector (in xy plane) and x-axis= 26.565051177077994
+Angle between rotated vector (in xy plane) and z-axis= 90.0
+Angle between rotated vector (in xy plane) and y-axis= 63.43494882292201
+s= [3, 4, 5] _s= [3, 2, 6]
+d= [5, 5, 4] _d= [5, 3, 6]
+Original sd_vector= [2, 1, -1]
+Angle with x axis= 35.26438968275465
+Angle with y axis= 65.9051574478893
+Angle with z axis= 114.0948425521107
+Final sd_vector= [2, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+
+
+
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$  
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$  
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$  
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+Angle between sd_vector and xy plane= -53.30056434036042
+s= [3, 4, 5] _s= [3, -2, 6]
+d= [5, 5, 2] _d= [5, 1, 5]
+sd_rotated (in plane xy)= [2, 3, -1]
+Angle between rotated vector (in xy plane) and x-axis= 57.688466762576155
+Angle between rotated vector (in xy plane) and z-axis= 105.501359566937
+Angle between rotated vector (in xy plane) and y-axis= 36.69922520048988
+s= [3, 4, 5] _s= [3, -2, 6]
+d= [5, 5, 2] _d= [5, 1, 5]
+Original sd_vector= [2, 1, -3]
+Angle with x axis= 57.688466762576155
+Angle with y axis= 74.498640433063
+Angle with z axis= 143.30077479951012
+Final sd_vector= [4, 0, -1]
+Angle with x axis= 14.036243467926484
+Angle with y axis= 90.0
+Angle with z axis= 104.03624346792648
+

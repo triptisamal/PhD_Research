@@ -1,0 +1,102 @@
+##AIM: given vector sd , rotate it such that it is 0 degrees to positive X axis (thus, 90 degrees to positive y axis and positive z axis).
+
+
+1. Find angle theta between XY plane and sd by following:
+	1.1 Using dot product between sd and a vector perpendicular to XY place (i.e. unit vector iz = [0 0 1]), find angle between sd and iz, "_theta" (_theta = cos inverse (sd.iz/|sd|.|iz|))
+	1.2 theta is complimentary angle of _theta, i.e., theta = 90-_theta
+
+2. Rotate points s and d, respectively, around x axis, such that the points lie in XY plane (or -X-Y, -X+Y, or -X-Y planes, using rotation matrix R_x =   [[1,0,0],
+             [0,round(math.cos(theta),2),-round(math.sin(theta),2)],
+            [0,round(math.sin(theta),2),round(math.cos(theta),2)]]
+	This R_x is in anticlockwise direction, if looking at positive x axis. You will get s_rotated and d_rotated by matrix multiplication.
+	[R_x][x]  =  [x_rotated] 
+             [y]     [y_rotated]
+             [z]     [z_rotated]
+
+
+3. Find new sd_rotated through the s_rotated and d_rotated. At this point, sd_rotated is 90 degrees to positive z axis.
+
+4. Find angle phi between sd_rotated and positive x axis, using dot product (phi = cos inverse (sd_rotated.ix/|sd_rotated|.|ix|, where ix is the unit vector in x direction [1 0 0])
+
+5. Rotate sd_rotated in the plane around z axis, to make it 0 degrees to x axis (thus, 90 degrees to y axis), using rotation matrix R_z = return [[round(math.cos(phi),2),-round(math.sin(phi),2),0],
+            [round(math.sin(phi),2),round(math.cos(phi),2),0],
+            [0,0,1]]
+
+    This R_z is in anticlockwise direction, if looking at positive x axis.
+
+
+
+PROBLEM!!!
+
+Since the points s and d could be in any of the 8 quadrants (3D), I am unsure when the rotation should be in clockwise, and anticlockwise (according to which R_x would be modified), and by how much angle in each case. Because right now, even if two points are in the same quadrants (thus, same rotation matrix), I am getting correct answer at step two for one, and incorrect answer for the other. Example:
+
+CORRECT EXAMPLE:
+
+Angle between sd_vector and xy plane= -24.094632092960996 
+s= [3, 4, 5] _s= [3, 2, 6]
+d= [5, 5, 4] _d= [5, 3, 6]
+sd_rotated (in plane xy)= [2, 1, 0]
+Angle between rotated vector (in xy plane) and x-axis= 26.565051177077994
+Angle between rotated vector (in xy plane) and z-axis= 90.0          <==============correct!!1
+Angle between rotated vector (in xy plane) and y-axis= 63.43494882292201
+s= [3, 4, 5] _s= [3, 2, 6]
+d= [5, 5, 4] _d= [5, 3, 6]
+Original sd_vector= [2, 1, -1]
+Angle with x axis= 35.26438968275465
+Angle with y axis= 65.9051574478893
+Angle with z axis= 114.0948425521107
+Final sd_vector= [2, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+
+
+
+
+INCORRECT EXAMPLE:
+
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$  
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$  
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$  
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+Angle between sd_vector and xy plane= -53.30056434036042
+s= [3, 4, 5] _s= [3, -2, 6]
+d= [5, 5, 2] _d= [5, 1, 5]
+sd_rotated (in plane xy)= [2, 3, -1]
+Angle between rotated vector (in xy plane) and x-axis= 57.688466762576155
+Angle between rotated vector (in xy plane) and z-axis= 105.501359566937   <===========incorrect!!
+Angle between rotated vector (in xy plane) and y-axis= 36.69922520048988
+s= [3, 4, 5] _s= [3, -2, 6]
+d= [5, 5, 2] _d= [5, 1, 5]
+Original sd_vector= [2, 1, -3]
+Angle with x axis= 57.688466762576155
+Angle with y axis= 74.498640433063
+Angle with z axis= 143.30077479951012
+Final sd_vector= [4, 0, -1]
+Angle with x axis= 14.036243467926484
+Angle with y axis= 90.0
+Angle with z axis= 104.03624346792648
+
+
+
+The rotation matrix used for both was R_x (copied from my code)=     
+
+
+
+if (x>0 and y>0 and z<0): #++-;rotated clockwise by theta (negative angle), lands on +X+Y plane
+        return [[1,0,0],
+             [0,round(math.cos(theta),2),round(math.sin(theta),2)],
+            [0,-round(math.sin(theta),2),round(math.cos(theta),2)]]
+
+
+
+PROBABLE SOLUTION (that I will try now):
+
+Will it make any difference if s and d lie on different sides of planes (different quandrants)? I didnt think it would, but if it is a problem perhaps the alternate solution would be:
+
+Instead of calculating angles between sd vector and XY plane, calculated angle between position vectors of s and d with xy plane respectively. Rotate s and d (anti clockwise or clockwise depending on which quandrant it is), according to angles between os position vector and od position vector, respectively (step 2). Then do the same for the second rotation (step 4), again with position vectors.
+
+
+
+
+

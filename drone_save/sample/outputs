@@ -1,0 +1,114 @@
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+54.735820776395066
+Angle with x axis= 114.0948425521107
+Angle with y axis= 114.0948425521107
+Angle with z axis= 35.26438968275465
+Original sd_vector= [-1, -1, 2]
+s= [3, 4, 1] _s= [3, 2, 4]
+d= [2, 3, 3] _d= [2, -1, 4]
+sd_rotated= [-1, -3, 0]
+108.43494882292202
+s= [3, 4, 1] _s= [3, 2, 4]
+d= [2, 3, 3] _d= [2, -1, 4]
+sd_rotated= [3, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+54.735820776395066
+s= [3, 4, 1] _s= [3, 2, 4]
+d= [2, 3, 3] _d= [2, -1, 4]
+sd_rotated= [-1, -3, 0]
+108.43494882292202
+s= [3, 4, 1] _s= [3, 2, 4]
+d= [2, 3, 3] _d= [2, -1, 4]
+Original sd_vector= [-1, -1, 2]
+Angle with x axis= 114.0948425521107
+Angle with y axis= 114.0948425521107
+Angle with z axis= 35.26438968275465
+Final sd_vector= [3, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ 
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+54.735820776395066
+s= [3, 4, 1] _s= [3, 2, 4]
+d= [2, 3, 3] _d= [2, -1, 4]
+sd_rotated= [-1, -3, 0]
+108.43494882292202
+s= [3, 4, 1] _s= [3, 2, 4]
+d= [2, 3, 3] _d= [2, -1, 4]
+Original sd_vector= [-1, -1, 2]
+Angle with x axis= 114.0948425521107
+Angle with y axis= 114.0948425521107
+Angle with z axis= 35.26438968275465
+Final sd_vector= [3, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+-81.95032256532194
+s= [3, 4, 16] _s= [3, 16, -2]
+d= [2, 3, 6] _d= [2, 6, -2]
+sd_rotated= [-1, -10, 0]
+95.71059313749964
+s= [3, 4, 16] _s= [3, 16, -2]
+d= [2, 3, 6] _d= [2, 6, -2]
+Original sd_vector= [-1, -1, -10]
+Angle with x axis= 95.68243848351683
+Angle with y axis= 95.68243848351683
+Angle with z axis= 171.95053302447167
+Final sd_vector= [10, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+-27.725681346472516
+s= [3, 4, 16] _s= [3, 11, 12]
+d= [2, 23, 6] _d= [2, 23, -5]
+sd_rotated= [-1, 12, -17]
+92.75134270098813
+s= [3, 4, 16] _s= [3, 11, 12]
+d= [2, 23, 6] _d= [2, 23, -5]
+Original sd_vector= [-1, 19, -10]
+Angle with x axis= 92.666603476751
+Angle with y axis= 27.876191000295606
+Angle with z axis= 117.72589180562223
+Final sd_vector= [-12, -1, -17]
+Angle with x axis= 125.17098491148802
+Angle with y axis= 92.75134270098813
+Angle with z axis= 144.68894834720044
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+-77.39540689247112
+s= [3, 4, 16] _s= [3, 17, 0]
+d= [2, 2, 6] _d= [2, 6, -1]
+sd_rotated= [-1, -11, -1]
+95.17321244611695
+s= [3, 4, 16] _s= [3, 17, 0]
+d= [2, 2, 6] _d= [2, 6, -1]
+Original sd_vector= [-1, -2, -10]
+Angle with x axis= 95.60040918481663
+Angle with y axis= 101.25523973266209
+Angle with z axis= 167.3956173516208
+Final sd_vector= [11, 0, -1]
+Angle with x axis= 5.1944289077348
+Angle with y axis= 90.0
+Angle with z axis= 95.1944289077348
+tripti@tripti:~/agent_strawman/DronesSimulator/sample$ python3 vectors.py 
+-80.24011728034047
+s= [3, 4, 16] _s= [3, 17, -1]
+d= [2, 2, 3] _d= [2, 3, -1]
+sd_rotated= [-1, -14, 0]
+94.08561677997488
+s= [3, 4, 16] _s= [3, 17, -1]
+d= [2, 2, 3] _d= [2, 3, -1]
+Original sd_vector= [-1, -2, -13]
+Angle with x axis= 94.3477531513354
+Angle with y axis= 98.72079692816342
+Angle with z axis= 170.24032773949017
+Final sd_vector= [14, 0, 0]
+Angle with x axis= 0.0
+Angle with y axis= 90.0
+Angle with z axis= 90.0
+
