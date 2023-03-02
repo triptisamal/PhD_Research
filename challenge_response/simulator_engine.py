@@ -1,6 +1,8 @@
 from collections import deque
 from copy import deepcopy
 import sys
+from collections import defaultdict
+  
 
 import globalvars
 from challenge_response import *
@@ -152,6 +154,17 @@ def process_event(e):
         #create a timer expiry event for every timerstart event
         node_handler(e['details']['timer_started_by'],"TIMER_EXPIRY",e)
         
+def make_confidence_table(): 
+    from collections import defaultdict
+    from itertools import permutations 
+    confidence_table = defaultdict(dict)
+
+    for (my_id, other) in permutations(range(globalvars.number_of_nodes), 2):
+        confidence_table[my_id][other] = 0
+        confidence_table[my_id][my_id] = 1
+
+    return confidence_table
+
 
 def main():
     '''Simulation engine'''
@@ -171,38 +184,11 @@ def main():
     
     
     #create confidence table
-   # globalvars.sim_map = [{'agent_id':i, 'position':(0,0,0), 'flash_light':0} for i in range(globalvars.number_of_nodes)]
-   
-    conf = [{'agent_id':i, 'value':0} for i in range(globalvars.number_of_nodes)]
+    confidence_table = make_confidence_table()
 
-        
-        
-    confidence_table = [{'my_id':i, 'confidence':conf} for i in range(globalvars.number_of_nodes)]
-    
-    
-    print(confidence_table[1]['my_id'])
-  #  print(confidence_table[1]['confidence'][1]['value'])
- #   print(confidence_table[1]['confidence'][2]['agent_id'])
- #   print(confidence_table[2]['confidence'][2]['agent_id'])
-    print("CONFIDENCE TABLE")
+    print("CONFIDENCE TABLE: {my_id: \{other_agent_id\: confidence_value,...}")
     print(confidence_table)
-    i=0
-    
-    while i < globalvars.number_of_nodes: 
-       # print(confidence_table[i]['my_id'])
-       # print(confidence_table[i]['confidence'])
-        if confidence_table[i]['my_id'] == confidence_table[i]['confidence'][i]['agent_id']:
-            confidence_table[i]['confidence'][i]['value'] = 99
-        i=i+1;
-                
-     #   for j in range(globalvars.number_of_nodes): 
-      #      if confidence_table[i]['my_id'] == confidence_table[i]['confidence'][i]['agent_id']:
-       #         confidence_table[i]['confidence'][j]['value'] = 1 
-            
-    print("CONFIDENCE TABLE")
-    print(confidence_table)
-
-    sys.exit()
+  
     #add first event(s) to the event_queue
     e = {'event_id':"DEFAULT", 'agent':0,'time':0}
     for i in range(globalvars.number_of_nodes):
@@ -219,11 +205,6 @@ def main():
         print("\nEVENT QUEUE:\n")
         print("-----------------")
         print(*globalvars.event_queue,sep="\n")
-
-
-
-
-
 
 
 if __name__=="__main__":
