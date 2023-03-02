@@ -14,3 +14,4 @@ def init():
     now = 0
     idn = 0
     e_now = 1
++-
