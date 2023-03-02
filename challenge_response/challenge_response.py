@@ -120,7 +120,7 @@ def create_sim_map():
     G = generate_random_3Dgraph(n_nodes=n, radius=0.25, seed=1)
     
     #plotting
-    network_plot_3D(G,0, save=False)
+   # network_plot_3D(G,0, save=False)
 
     x_nodes = [globalvars.pos[key][0] for key in globalvars.pos.keys()]
     y_nodes = [globalvars.pos[key][1] for key in globalvars.pos.keys()]
