@@ -1,5 +1,5 @@
 from create_pos import *
-import globalvars
+import temp.globalvars
 
 def reads_velocity():
     

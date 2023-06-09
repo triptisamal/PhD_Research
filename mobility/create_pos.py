@@ -1,4 +1,4 @@
-import globalvars
+import temp.globalvars
 
 
 #import plotly.graph_objects as go
